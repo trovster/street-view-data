@@ -1,26 +1,15 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2026-05-26T20:31:44.542Z",
+  "generatedAt": "2026-05-26T20:55:33.356Z",
   "source": "open-meteo",
   "sourceUrl": "https://api.open-meteo.com/v1/forecast?latitude=53.55262&longitude=-0.16441&timezone=Europe%2FLondon&minutely_15=weather_code%2Ccloud_cover%2Cprecipitation%2Crain%2Csnowfall%2Csnow_depth%2Cwind_speed_10m%2Cwind_gusts_10m%2Cvisibility%2Cis_day&daily=sunrise%2Csunset&past_days=2&forecast_days=1&past_minutely_15=192&forecast_minutely_15=1",
   "originalResponse": "originals/2026/05/2026-05-26.json",
-=======
-  "generatedAt": "2026-05-26T20:04:34.553Z",
-  "source": "open-meteo",
-  "sourceUrl": "https://api.open-meteo.com/v1/forecast?latitude=53.55262&longitude=-0.16441&timezone=Europe%2FLondon&past_days=2&forecast_days=1&past_minutely_15=192&forecast_minutely_15=1&minutely_15=weather_code%2Ccloud_cover%2Cprecipitation%2Crain%2Csnowfall%2Csnow_depth%2Cwind_speed_10m%2Cwind_gusts_10m%2Cvisibility%2Cis_day&daily=sunrise%2Csunset",
-  "originalResponse": "originals/2026/05/26/2026-05-26T21-00.json",
->>>>>>> cf7d236fcb2387318045ec5ec9233ff2fdb393e9
   "coordinates": {
     "latitude": 53.55262,
     "longitude": -0.16441
   },
   "timezone": "Europe/London",
   "pointCount": 192,
-<<<<<<< HEAD
-  "latestAllowedTime": "2026-05-26T21:30",
-=======
-  "latestAllowedTime": "2026-05-26T21:00",
->>>>>>> cf7d236fcb2387318045ec5ec9233ff2fdb393e9
+  "latestAllowedTime": "2026-05-26T21:45",
   "sunriseSunsetLeewayMinutes": 60,
   "snowDepthThresholdMeters": 0.02,
   "daily": {
@@ -41,21 +30,6 @@
     ]
   },
   "points": [
-    {
-<<<<<<< HEAD
-=======
-      "time": "2026-05-24T21:15",
-      "file": "2026/05/24/2026-05-24T21-15.json"
-    },
-    {
-      "time": "2026-05-24T21:30",
-      "file": "2026/05/24/2026-05-24T21-30.json"
-    },
-    {
->>>>>>> cf7d236fcb2387318045ec5ec9233ff2fdb393e9
-      "time": "2026-05-24T21:45",
-      "file": "2026/05/24/2026-05-24T21-45.json"
-    },
     {
       "time": "2026-05-24T22:00",
       "file": "2026/05/24/2026-05-24T22-00.json"
@@ -811,7 +785,6 @@
     {
       "time": "2026-05-26T21:00",
       "file": "2026/05/26/2026-05-26T21-00.json"
-<<<<<<< HEAD
     },
     {
       "time": "2026-05-26T21:15",
@@ -820,8 +793,10 @@
     {
       "time": "2026-05-26T21:30",
       "file": "2026/05/26/2026-05-26T21-30.json"
-=======
->>>>>>> cf7d236fcb2387318045ec5ec9233ff2fdb393e9
+    },
+    {
+      "time": "2026-05-26T21:45",
+      "file": "2026/05/26/2026-05-26T21-45.json"
     }
   ]
 }

@@ -16,7 +16,7 @@
   "astronomy": {
     "sunrise": "2026-05-25T04:45",
     "sunset": "2026-05-25T21:09",
-    "moonIllumination": 0.6901537226608051
+    "moonIllumination": 0.6860466935510737
   },
   "scene": {
     "baseLayer": "default",
