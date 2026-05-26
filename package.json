@@ -1,0 +1,8 @@
+{
+  "name": "street-view-data",
+  "private": true,
+  "scripts": {
+    "fetch:weather": "node scripts/fetch-weather-data.mjs",
+    "test": "node scripts/test.mjs"
+  }
+}
