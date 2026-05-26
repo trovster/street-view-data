@@ -107,7 +107,7 @@ export function buildOpenMeteoUrl({
   } else {
     Object.assign(params, {
       past_days: "2",
-      forecast_days: "0",
+      forecast_days: "1",
       past_minutely_15: String(pointCount),
       forecast_minutely_15: "1",
     });

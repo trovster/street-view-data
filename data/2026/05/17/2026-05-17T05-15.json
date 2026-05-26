@@ -1,0 +1,30 @@
+{
+  "time": "2026-05-17T05:15",
+  "source": "open-meteo",
+  "raw": {
+    "weather_code": 1,
+    "cloud_cover": 20,
+    "precipitation": 0,
+    "rain": 0,
+    "snowfall": 0,
+    "snow_depth": 0,
+    "wind_speed_10m": 14.9,
+    "wind_gusts_10m": 25.6,
+    "visibility": 21540,
+    "is_day": 1
+  },
+  "astronomy": {
+    "sunrise": "2026-05-17T04:56",
+    "sunset": "2026-05-17T20:57",
+    "moonIllumination": 0.0022434749605377835
+  },
+  "scene": {
+    "baseLayer": "default",
+    "scene": "sunrise",
+    "clouds": "none",
+    "rain": "none",
+    "snow": "none",
+    "wind": "light",
+    "fog": false
+  }
+}

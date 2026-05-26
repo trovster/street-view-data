@@ -1,0 +1,30 @@
+{
+  "time": "2026-05-07T13:30",
+  "source": "open-meteo",
+  "raw": {
+    "weather_code": 3,
+    "cloud_cover": 98,
+    "precipitation": 0,
+    "rain": 0,
+    "snowfall": 0,
+    "snow_depth": 0,
+    "wind_speed_10m": 10,
+    "wind_gusts_10m": 22.7,
+    "visibility": 44900,
+    "is_day": 1
+  },
+  "astronomy": {
+    "sunrise": "2026-05-07T05:13",
+    "sunset": "2026-05-07T20:40",
+    "moonIllumination": 0.6896249062363615
+  },
+  "scene": {
+    "baseLayer": "default",
+    "scene": "day",
+    "clouds": "many",
+    "rain": "none",
+    "snow": "none",
+    "wind": "light",
+    "fog": false
+  }
+}
