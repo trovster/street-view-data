@@ -8,15 +8,15 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 16.2,
-    "wind_gusts_10m": 29.5,
-    "visibility": 30080,
+    "wind_speed_10m": 15.5,
+    "wind_gusts_10m": 28.8,
+    "visibility": 31880,
     "is_day": 1
   },
   "astronomy": {
     "sunrise": "2026-05-26T04:44",
     "sunset": "2026-05-26T21:11",
-    "moonIllumination": 0.7526623341094403
+    "moonIllumination": 0.7564774458365342
   },
   "scene": {
     "baseLayer": "default",
