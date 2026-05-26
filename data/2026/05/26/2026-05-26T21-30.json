@@ -3,20 +3,20 @@
   "source": "open-meteo",
   "raw": {
     "weather_code": 2,
-    "cloud_cover": 71,
+    "cloud_cover": 67,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
     "wind_speed_10m": 13.7,
-    "wind_gusts_10m": 25.9,
-    "visibility": 31760,
+    "wind_gusts_10m": 26.3,
+    "visibility": 33080,
     "is_day": 0
   },
   "astronomy": {
     "sunrise": "2026-05-26T04:44",
     "sunset": "2026-05-26T21:11",
-    "moonIllumination": 0.7752446991201571
+    "moonIllumination": 0.7789344236791994
   },
   "scene": {
     "baseLayer": "default",
