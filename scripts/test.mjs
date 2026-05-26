@@ -2,22 +2,27 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import {
-  buildOpenMeteoUrl,
-  dataFileForTime,
-  dataPathForTime,
-  originalPathForTime,
-  pointReferenceForTime,
-} from "./fetch-weather-data.mjs";
-import {
   deriveScene,
   moonIllumination,
   normaliseWeatherPoint,
   weatherConfig,
 } from "./weather-mapping.mjs";
 
+process.env.LATITUDE = "52.10001";
+process.env.LONGITUDE = "-1.20002";
+
+const {
+  buildOpenMeteoUrl,
+  dataFileForTime,
+  dataPathForTime,
+  originalPathForTime,
+  pointReferenceForTime,
+} = await import(`./fetch-weather-data.mjs?test=${Date.now()}`);
+
 const packageJson = JSON.parse(readFileSync("package.json", "utf8"));
 const gitignore = existsSync(".gitignore") ? readFileSync(".gitignore", "utf8") : "";
 const fetchScript = readFileSync("scripts/fetch-weather-data.mjs", "utf8");
+const backfillScriptPath = "scripts/backfill-weather-data.mjs";
 const workflowPath = ".github/workflows/fetch-weather.yml";
 const workflow = existsSync(workflowPath) ? readFileSync(workflowPath, "utf8") : "";
 const failures = [];
@@ -85,8 +90,8 @@ assertEqual(
 
 assertEqual(
   originalPathForTime("2026-05-24T16:15"),
-  "originals/2026/05/24/2026-05-24T16-15.json",
-  "Original API responses are stored under originals/year/month/day",
+  "originals/2026/05/2026-05-24.json",
+  "Original API responses are stored by date under originals/year/month",
 );
 
 assertDeepEqual(
@@ -102,6 +107,43 @@ assertMatch(
   buildOpenMeteoUrl().toString(),
   /^https:\/\/api\.open-meteo\.com\/v1\/forecast\?/,
   "Weather fetches use the Open-Meteo forecast endpoint",
+);
+
+assertEqual(
+  buildOpenMeteoUrl().searchParams.get("latitude"),
+  process.env.LATITUDE,
+  "Weather fetches read latitude from the environment",
+);
+
+assertEqual(
+  buildOpenMeteoUrl().searchParams.get("longitude"),
+  process.env.LONGITUDE,
+  "Weather fetches read longitude from the environment",
+);
+
+const explicitRangeUrl = buildOpenMeteoUrl({
+  endDate: "2026-05-01",
+  endMinutely15: "2026-05-01T23:45",
+  startDate: "2026-05-01",
+  startMinutely15: "2026-05-01T00:00",
+});
+
+assertEqual(
+  explicitRangeUrl.searchParams.get("start_minutely_15"),
+  "2026-05-01T00:00",
+  "Backfill requests can target a specific 15-minute start time",
+);
+
+assertEqual(
+  explicitRangeUrl.searchParams.get("end_minutely_15"),
+  "2026-05-01T23:45",
+  "Backfill requests can target a specific 15-minute end time",
+);
+
+assertEqual(
+  explicitRangeUrl.searchParams.has("past_minutely_15"),
+  false,
+  "Explicit backfill requests do not use relative minutely ranges",
 );
 
 assertDeepEqual(
@@ -236,6 +278,10 @@ assertEqual(
 
 const ignoredPaths = gitignore.split(/\r?\n/);
 
+if (!ignoredPaths.includes(".env")) {
+  failures.push(".env must be git-ignored because it is generated from secrets.");
+}
+
 if (ignoredPaths.includes("data/") || ignoredPaths.includes("originals/")) {
   failures.push("data/ and originals/ must stay tracked in version control.");
 }
@@ -246,6 +292,10 @@ if (packageJson.scripts["fetch:weather"] !== "node scripts/fetch-weather-data.mj
 
 if (!packageJson.scripts.test) {
   failures.push("package.json does not define the test script.");
+}
+
+if (packageJson.scripts["backfill:weather"] !== "node scripts/backfill-weather-data.mjs") {
+  failures.push("package.json does not define the month weather backfill script.");
 }
 
 if (fetchScript.includes("rmSync(dataDirectory") || fetchScript.includes("renameSync(tempDirectory, dataDirectory)")) {
@@ -268,8 +318,43 @@ if (!workflow.includes("npm run fetch:weather -- --strict")) {
   failures.push("The fetch workflow does not run a strict weather fetch.");
 }
 
+if (!workflow.includes("LATITUDE=${{ secrets.LATITUDE }}")) {
+  failures.push("The fetch workflow does not generate .env latitude from a GitHub secret.");
+}
+
+if (!workflow.includes("LONGITUDE=${{ secrets.LONGITUDE }}")) {
+  failures.push("The fetch workflow does not generate .env longitude from a GitHub secret.");
+}
+
 if (!workflow.includes("git add data originals")) {
   failures.push("The fetch workflow does not stage both transformed and original weather data.");
+}
+
+if (!existsSync(backfillScriptPath)) {
+  failures.push("The month weather backfill script is missing.");
+} else {
+  const { backfillDatesForMonth, parseBackfillMonth } = await import(`./backfill-weather-data.mjs?test=${Date.now()}`);
+  const mayDates = backfillDatesForMonth("2026-05", {
+    today: new Date("2026-05-26T12:00:00Z"),
+  });
+  const aprilDates = backfillDatesForMonth("April 2026", {
+    today: new Date("2026-05-26T12:00:00Z"),
+  });
+  const futureDates = backfillDatesForMonth("2026-06", {
+    today: new Date("2026-05-26T12:00:00Z"),
+  });
+
+  assertDeepEqual(
+    parseBackfillMonth("2026-05"),
+    { year: 2026, month: 5, label: "2026-05" },
+    "The backfill script parses a YYYY-MM month",
+  );
+  assertEqual(mayDates.length, 26, "The May 2026 backfill stops at today when May is current");
+  assertEqual(mayDates[0], "2026-05-01", "The May 2026 backfill starts on 2026-05-01");
+  assertEqual(mayDates[25], "2026-05-26", "The May 2026 backfill does not include dates after today");
+  assertEqual(aprilDates.length, 30, "Past months backfill every day in the month");
+  assertEqual(aprilDates[29], "2026-04-30", "Past month backfills include the final day");
+  assertEqual(futureDates.length, 0, "Future months do not backfill any dates");
 }
 
 if (existsSync("data/index.json")) {
@@ -293,7 +378,7 @@ if (existsSync("data/index.json")) {
 
 if (existsSync("originals")) {
   const originalFiles = recursiveJsonFiles("originals");
-  const flatOriginalFiles = originalFiles.filter((file) => !/^originals\/\d{4}\/\d{2}\/\d{2}\/\d{4}-\d{2}-\d{2}T\d{2}-\d{2}\.json$/.test(file));
+  const flatOriginalFiles = originalFiles.filter((file) => !/^originals\/\d{4}\/\d{2}\/\d{4}-\d{2}-\d{2}\.json$/.test(file));
 
   if (flatOriginalFiles.length > 0) {
     failures.push(`originals includes non-nested response files: ${flatOriginalFiles.join(", ")}.`);

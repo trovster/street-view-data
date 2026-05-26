@@ -30,6 +30,11 @@ jobs:
       - name: Install
         run: npm install
 
+      - name: Generate environment file
+        run: |
+          echo "LATITUDE=${{ secrets.LATITUDE }}" > .env
+          echo "LONGITUDE=${{ secrets.LONGITUDE }}" >> .env
+
       - name: Fetch weather data
         run: npm run fetch:weather -- --strict
 

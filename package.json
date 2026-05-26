@@ -2,6 +2,7 @@
   "name": "street-view-data",
   "private": true,
   "scripts": {
+    "backfill:weather": "node scripts/backfill-weather-data.mjs",
     "fetch:weather": "node scripts/fetch-weather-data.mjs",
     "test": "node scripts/test.mjs"
   }

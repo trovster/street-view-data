@@ -10,14 +10,12 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { normaliseWeatherPoint, weatherConfig } from "./weather-mapping.mjs";
 
-const coordinates = {
-  latitude: 53.55262,
-  longitude: -0.16441,
-};
 const timezone = "Europe/London";
 const pointCount = 192;
+const pointsPerDay = 96;
 const dataDirectory = "data";
 const originalsDirectory = "originals";
+const envFile = ".env";
 const openMeteoEndpoint = "https://api.open-meteo.com/v1/forecast";
 const minutelyVariables = [
   "weather_code",
@@ -32,13 +30,18 @@ const minutelyVariables = [
   "is_day",
 ];
 
+loadDotEnv();
+
 export async function fetchWeatherData({ strict = false } = {}) {
   try {
     const fetchedAt = new Date();
     const latestAllowedTime = latestLocalQuarterHour(fetchedAt);
-    const payload = await requestOpenMeteo();
+    const url = buildOpenMeteoUrl();
+    const payload = await requestOpenMeteo(url);
     const points = normalisePayload(payload, latestAllowedTime);
-    const originalPath = writeWeatherFiles(points, payload, latestAllowedTime);
+    const originalPath = writeWeatherFiles(points, payload, latestAllowedTime, {
+      sourceUrl: url.toString(),
+    });
 
     console.log(`Fetched ${points.length} weather points to ${dataDirectory}.`);
     console.log(`Archived original Open-Meteo response to ${originalPath}.`);
@@ -53,25 +56,77 @@ export async function fetchWeatherData({ strict = false } = {}) {
   }
 }
 
-export function buildOpenMeteoUrl() {
+export async function backfillWeatherDataForDay(date) {
+  const { endTime, startTime } = dayTimeRange(date);
+  const url = buildOpenMeteoUrl({
+    endDate: date,
+    endMinutely15: endTime,
+    startDate: date,
+    startMinutely15: startTime,
+  });
+  const payload = await requestOpenMeteo(url);
+  const points = normalisePayload(payload, endTime, {
+    expectedPointCount: pointsPerDay,
+  });
+  const originalPath = writeWeatherFiles(points, payload, endTime, {
+    sourceUrl: url.toString(),
+    updateManifest: false,
+  });
+
+  return {
+    date,
+    originalPath,
+    pointCount: points.length,
+  };
+}
+
+export function buildOpenMeteoUrl({
+  endDate,
+  endMinutely15,
+  startDate,
+  startMinutely15,
+} = {}) {
   const url = new URL(openMeteoEndpoint);
+  const coordinates = weatherCoordinates();
   const params = {
     latitude: String(coordinates.latitude),
     longitude: String(coordinates.longitude),
     timezone,
-    past_days: "2",
-    forecast_days: "1",
-    past_minutely_15: String(pointCount),
-    forecast_minutely_15: "1",
     minutely_15: minutelyVariables.join(","),
     daily: "sunrise,sunset",
   };
+  const explicitRange = startDate || endDate || startMinutely15 || endMinutely15;
+
+  if (explicitRange) {
+    Object.assign(params, {
+      start_date: startDate,
+      end_date: endDate,
+      start_minutely_15: startMinutely15,
+      end_minutely_15: endMinutely15,
+    });
+  } else {
+    Object.assign(params, {
+      past_days: "2",
+      forecast_days: "0",
+      past_minutely_15: String(pointCount),
+      forecast_minutely_15: "1",
+    });
+  }
 
   for (const [key, value] of Object.entries(params)) {
-    url.searchParams.set(key, value);
+    if (value !== undefined) {
+      url.searchParams.set(key, value);
+    }
   }
 
   return url;
+}
+
+export function weatherCoordinates() {
+  return {
+    latitude: requiredCoordinate("LATITUDE"),
+    longitude: requiredCoordinate("LONGITUDE"),
+  };
 }
 
 export function dataFileForTime(time) {
@@ -83,7 +138,9 @@ export function dataPathForTime(time) {
 }
 
 export function originalPathForTime(time) {
-  return join(originalsDirectory, pointReferenceForTime(time).file);
+  const { year, month, day } = timeParts(time);
+
+  return join(originalsDirectory, year, month, `${year}-${month}-${day}.json`);
 }
 
 export function pointReferenceForTime(time) {
@@ -95,7 +152,7 @@ export function pointReferenceForTime(time) {
   };
 }
 
-function normalisePayload(payload, latestAllowedTime) {
+function normalisePayload(payload, latestAllowedTime, { expectedPointCount = pointCount } = {}) {
   if (payload.error) {
     throw new Error(payload.reason || "Open-Meteo returned an error response.");
   }
@@ -116,10 +173,10 @@ function normalisePayload(payload, latestAllowedTime) {
   const rawPoints = minutely.time
     .map((time, index) => rawPointAt(minutely, time, index))
     .filter((point) => point.time <= latestAllowedTime)
-    .slice(-pointCount);
+    .slice(-expectedPointCount);
 
-  if (rawPoints.length !== pointCount) {
-    throw new Error(`Expected ${pointCount} weather points, received ${rawPoints.length}.`);
+  if (rawPoints.length !== expectedPointCount) {
+    throw new Error(`Expected ${expectedPointCount} weather points, received ${rawPoints.length}.`);
   }
 
   return rawPoints.map((point) => {
@@ -171,8 +228,8 @@ function dailyAstronomyByDate(daily) {
   );
 }
 
-async function requestOpenMeteo() {
-  const response = await getJson(buildOpenMeteoUrl());
+async function requestOpenMeteo(url = buildOpenMeteoUrl()) {
+  const response = await getJson(url);
 
   return JSON.parse(response);
 }
@@ -203,7 +260,10 @@ function getJson(url) {
   });
 }
 
-function writeWeatherFiles(points, payload, archiveTime) {
+function writeWeatherFiles(points, payload, archiveTime, {
+  sourceUrl = buildOpenMeteoUrl().toString(),
+  updateManifest = true,
+} = {}) {
   const manifestPoints = points.map((point) => {
     const pointReference = pointReferenceForTime(point.time);
     const pointPath = join(dataDirectory, pointReference.file);
@@ -215,27 +275,32 @@ function writeWeatherFiles(points, payload, archiveTime) {
   const originalPath = originalPathForTime(archiveTime);
 
   writeJson(originalPath, payload);
-  writeJson(join(dataDirectory, "index.json"), {
-    generatedAt: new Date().toISOString(),
-    source: "open-meteo",
-    sourceUrl: buildOpenMeteoUrl().toString(),
-    originalResponse: originalPath,
-    coordinates,
-    timezone,
-    pointCount,
-    latestAllowedTime: archiveTime,
-    sunriseSunsetLeewayMinutes: weatherConfig.sunriseSunsetLeewayMinutes,
-    snowDepthThresholdMeters: weatherConfig.snowDepthThresholdMeters,
-    daily: payload.daily,
-    points: manifestPoints,
-  });
+
+  if (updateManifest) {
+    writeJson(join(dataDirectory, "index.json"), {
+      generatedAt: new Date().toISOString(),
+      source: "open-meteo",
+      sourceUrl,
+      originalResponse: originalPath,
+      coordinates: weatherCoordinates(),
+      timezone,
+      pointCount,
+      latestAllowedTime: archiveTime,
+      sunriseSunsetLeewayMinutes: weatherConfig.sunriseSunsetLeewayMinutes,
+      snowDepthThresholdMeters: weatherConfig.snowDepthThresholdMeters,
+      daily: payload.daily,
+      points: manifestPoints,
+    });
+
+    assertGeneratedManifest(manifestPoints);
+  }
 
   assertGeneratedFiles(manifestPoints, originalPath);
 
   return originalPath;
 }
 
-function assertGeneratedFiles(manifestPoints, originalPath) {
+function assertGeneratedManifest(manifestPoints) {
   const manifest = JSON.parse(readFileSync(join(dataDirectory, "index.json"), "utf8"));
 
   if (manifest.points.length !== pointCount) {
@@ -246,6 +311,14 @@ function assertGeneratedFiles(manifestPoints, originalPath) {
 
   if (missingFiles.length > 0) {
     throw new Error(`Manifest references missing point files: ${missingFiles.map((point) => point.file).join(", ")}.`);
+  }
+}
+
+function assertGeneratedFiles(manifestPoints, originalPath) {
+  const missingFiles = manifestPoints.filter((point) => !existsSync(join(dataDirectory, point.file)));
+
+  if (missingFiles.length > 0) {
+    throw new Error(`Generated missing point files: ${missingFiles.map((point) => point.file).join(", ")}.`);
   }
 
   if (!existsSync(originalPath)) {
@@ -274,6 +347,67 @@ function assertNoFlatJsonFiles(directory) {
 function writeJson(path, value) {
   mkdirSync(dirname(path), { recursive: true });
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+function loadDotEnv(path = envFile) {
+  if (!existsSync(path)) {
+    return;
+  }
+
+  for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
+    const trimmedLine = line.trim();
+
+    if (!trimmedLine || trimmedLine.startsWith("#")) {
+      continue;
+    }
+
+    const match = trimmedLine.match(/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+
+    if (!match) {
+      continue;
+    }
+
+    const [, key, rawValue] = match;
+
+    process.env[key] ??= unquoteDotEnvValue(rawValue.trim());
+  }
+}
+
+function unquoteDotEnvValue(value) {
+  const quote = value[0];
+
+  if ((quote === '"' || quote === "'") && value.endsWith(quote)) {
+    return value.slice(1, -1);
+  }
+
+  return value;
+}
+
+function requiredCoordinate(name) {
+  const value = process.env[name];
+
+  if (!value) {
+    throw new Error(`Missing ${name}. Add it to ${envFile} or the environment.`);
+  }
+
+  const coordinate = Number(value);
+
+  if (!Number.isFinite(coordinate)) {
+    throw new Error(`${name} must be a valid number.`);
+  }
+
+  return coordinate;
+}
+
+function dayTimeRange(date) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    throw new Error(`Invalid weather date: ${date}.`);
+  }
+
+  return {
+    startTime: `${date}T00:00`,
+    endTime: `${date}T23:45`,
+  };
 }
 
 function latestLocalQuarterHour(date = new Date()) {
