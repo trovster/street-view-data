@@ -2,15 +2,15 @@
   "time": "2026-05-27T20:45",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 2,
-    "cloud_cover": 70,
+    "weather_code": 3,
+    "cloud_cover": 88,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 17.3,
-    "wind_gusts_10m": 32,
-    "visibility": 19940,
+    "wind_speed_10m": 16.6,
+    "wind_gusts_10m": 31.3,
+    "visibility": 20440,
     "is_day": 1
   },
   "astronomy": {
