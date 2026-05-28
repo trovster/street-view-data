@@ -2,15 +2,15 @@
   "time": "2026-05-28T13:15",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 1,
-    "cloud_cover": 39,
+    "weather_code": 2,
+    "cloud_cover": 50,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
     "wind_speed_10m": 24.5,
-    "wind_gusts_10m": 45.7,
-    "visibility": 24440,
+    "wind_gusts_10m": 45,
+    "visibility": 21320,
     "is_day": 1
   },
   "astronomy": {
@@ -24,7 +24,7 @@
     "clouds": "few",
     "rain": "none",
     "snow": "none",
-    "wind": "strong",
+    "wind": "light",
     "fog": false
   }
 }
