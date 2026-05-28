@@ -2,8 +2,8 @@
   "time": "2026-05-28T13:15",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 2,
-    "cloud_cover": 50,
+    "weather_code": 1,
+    "cloud_cover": 49,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
