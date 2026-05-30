@@ -1,5 +1,5 @@
 {
-  "time": "2026-05-30T21:15",
+  "time": "2026-05-30T23:45",
   "source": "open-meteo",
   "raw": {
     "weather_code": 3,
@@ -8,19 +8,19 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 10.4,
-    "wind_gusts_10m": 19.8,
-    "visibility": 38040,
-    "is_day": 1
+    "wind_speed_10m": 7.6,
+    "wind_gusts_10m": 13.3,
+    "visibility": 35720,
+    "is_day": 0
   },
   "astronomy": {
     "sunrise": "2026-05-30T04:40",
     "sunset": "2026-05-30T21:16",
-    "moonIllumination": 0.9957730275756523
+    "moonIllumination": 0.9970890579077207
   },
   "scene": {
     "baseLayer": "default",
-    "scene": "sunset",
+    "scene": "night-full",
     "clouds": "many",
     "rain": "none",
     "snow": "none",
