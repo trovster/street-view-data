@@ -1,5 +1,5 @@
 {
-  "time": "2026-06-01T21:45",
+  "time": "2026-06-01T22:00",
   "source": "open-meteo",
   "raw": {
     "weather_code": 3,
@@ -10,13 +10,13 @@
     "snow_depth": 0,
     "wind_speed_10m": 14.8,
     "wind_gusts_10m": 27,
-    "visibility": 18560,
+    "visibility": 17880,
     "is_day": 0
   },
   "astronomy": {
     "sunrise": "2026-06-01T04:38",
     "sunset": "2026-06-01T21:19",
-    "moonIllumination": 0.9776907014863466
+    "moonIllumination": 0.9773622027142508
   },
   "scene": {
     "baseLayer": "default",
