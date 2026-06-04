@@ -2,15 +2,15 @@
   "time": "2026-06-04T02:30",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 55,
-    "cloud_cover": 100,
-    "precipitation": 0.3,
-    "rain": 0.3,
+    "weather_code": 3,
+    "cloud_cover": 95,
+    "precipitation": 0,
+    "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 15.1,
-    "wind_gusts_10m": 28.1,
-    "visibility": 14140,
+    "wind_speed_10m": 19.1,
+    "wind_gusts_10m": 35.3,
+    "visibility": 21300,
     "is_day": 0
   },
   "astronomy": {
@@ -22,7 +22,7 @@
     "baseLayer": "default",
     "scene": "night-full",
     "clouds": "many",
-    "rain": "heavy",
+    "rain": "none",
     "snow": "none",
     "wind": "light",
     "fog": false
