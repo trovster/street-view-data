@@ -2,15 +2,15 @@
   "time": "2026-06-10T19:00",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 2,
-    "cloud_cover": 68,
+    "weather_code": 3,
+    "cloud_cover": 100,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 7.6,
-    "wind_gusts_10m": 14,
-    "visibility": 34220,
+    "wind_speed_10m": 19.4,
+    "wind_gusts_10m": 35.3,
+    "visibility": 34280,
     "is_day": 1
   },
   "astronomy": {
