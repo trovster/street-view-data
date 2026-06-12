@@ -8,8 +8,8 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 22.3,
-    "wind_gusts_10m": 40.7,
+    "wind_speed_10m": 23,
+    "wind_gusts_10m": 42.1,
     "visibility": 36180,
     "is_day": 1
   },
