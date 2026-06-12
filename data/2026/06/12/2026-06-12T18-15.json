@@ -1,27 +1,27 @@
 {
-  "time": "2026-06-12T11:30",
+  "time": "2026-06-12T18:15",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 3,
-    "cloud_cover": 100,
+    "weather_code": 1,
+    "cloud_cover": 26,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 25.2,
-    "wind_gusts_10m": 46.4,
-    "visibility": 29900,
+    "wind_speed_10m": 28.4,
+    "wind_gusts_10m": 51.5,
+    "visibility": 28500,
     "is_day": 1
   },
   "astronomy": {
     "sunrise": "2026-06-12T04:31",
     "sunset": "2026-06-12T21:29",
-    "moonIllumination": 0.08513117232077061
+    "moonIllumination": 0.0691834422784045
   },
   "scene": {
     "baseLayer": "default",
     "scene": "day",
-    "clouds": "many",
+    "clouds": "few",
     "rain": "none",
     "snow": "none",
     "wind": "strong",
