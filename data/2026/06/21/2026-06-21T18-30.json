@@ -3,7 +3,7 @@
   "source": "open-meteo",
   "raw": {
     "weather_code": 0,
-    "cloud_cover": 2,
+    "cloud_cover": 1,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
