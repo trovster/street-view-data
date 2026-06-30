@@ -2,8 +2,8 @@
   "time": "2026-06-30T20:00",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 3,
-    "cloud_cover": 100,
+    "weather_code": 0,
+    "cloud_cover": 9,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
@@ -21,7 +21,7 @@
   "scene": {
     "baseLayer": "default",
     "scene": "day",
-    "clouds": "many",
+    "clouds": "none",
     "rain": "none",
     "snow": "none",
     "wind": "none",
