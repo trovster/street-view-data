@@ -2,15 +2,15 @@
   "time": "2026-07-01T04:30",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 1,
-    "cloud_cover": 24,
+    "weather_code": 2,
+    "cloud_cover": 71,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 8.3,
-    "wind_gusts_10m": 15.1,
-    "visibility": 16040,
+    "wind_speed_10m": 7.6,
+    "wind_gusts_10m": 13.7,
+    "visibility": 17760,
     "is_day": 0
   },
   "astronomy": {
@@ -21,7 +21,7 @@
   "scene": {
     "baseLayer": "default",
     "scene": "sunrise",
-    "clouds": "few",
+    "clouds": "many",
     "rain": "none",
     "snow": "none",
     "wind": "light",
