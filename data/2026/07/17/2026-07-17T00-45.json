@@ -3,14 +3,14 @@
   "source": "open-meteo",
   "raw": {
     "weather_code": 2,
-    "cloud_cover": 54,
+    "cloud_cover": 78,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 6.5,
-    "wind_gusts_10m": 12.6,
-    "visibility": 11000,
+    "wind_speed_10m": 6.8,
+    "wind_gusts_10m": 13,
+    "visibility": 12000,
     "is_day": 0
   },
   "astronomy": {
@@ -21,7 +21,7 @@
   "scene": {
     "baseLayer": "default",
     "scene": "night-half",
-    "clouds": "few",
+    "clouds": "many",
     "rain": "none",
     "snow": "none",
     "wind": "light",
