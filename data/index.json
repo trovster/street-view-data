@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T15:06:50.899Z",
+  "generatedAt": "2026-07-17T17:02:06.004Z",
   "source": "open-meteo",
   "sourceUrl": "https://api.open-meteo.com/v1/forecast?latitude=53.55262&longitude=-0.16441&timezone=Europe%2FLondon&minutely_15=weather_code%2Ccloud_cover%2Cprecipitation%2Crain%2Csnowfall%2Csnow_depth%2Cwind_speed_10m%2Cwind_gusts_10m%2Cvisibility%2Cis_day&daily=sunrise%2Csunset&past_days=2&forecast_days=1&past_minutely_15=192&forecast_minutely_15=1",
   "originalResponse": "originals/2026/07/2026-07-17.json",
@@ -9,7 +9,7 @@
   },
   "timezone": "Europe/London",
   "pointCount": 192,
-  "latestAllowedTime": "2026-07-17T16:00",
+  "latestAllowedTime": "2026-07-17T18:00",
   "sunriseSunsetLeewayMinutes": 60,
   "snowDepthThresholdMeters": 0.02,
   "daily": {
@@ -30,38 +30,6 @@
     ]
   },
   "points": [
-    {
-      "time": "2026-07-15T16:15",
-      "file": "2026/07/15/2026-07-15T16-15.json"
-    },
-    {
-      "time": "2026-07-15T16:30",
-      "file": "2026/07/15/2026-07-15T16-30.json"
-    },
-    {
-      "time": "2026-07-15T16:45",
-      "file": "2026/07/15/2026-07-15T16-45.json"
-    },
-    {
-      "time": "2026-07-15T17:00",
-      "file": "2026/07/15/2026-07-15T17-00.json"
-    },
-    {
-      "time": "2026-07-15T17:15",
-      "file": "2026/07/15/2026-07-15T17-15.json"
-    },
-    {
-      "time": "2026-07-15T17:30",
-      "file": "2026/07/15/2026-07-15T17-30.json"
-    },
-    {
-      "time": "2026-07-15T17:45",
-      "file": "2026/07/15/2026-07-15T17-45.json"
-    },
-    {
-      "time": "2026-07-15T18:00",
-      "file": "2026/07/15/2026-07-15T18-00.json"
-    },
     {
       "time": "2026-07-15T18:15",
       "file": "2026/07/15/2026-07-15T18-15.json"
@@ -797,6 +765,38 @@
     {
       "time": "2026-07-17T16:00",
       "file": "2026/07/17/2026-07-17T16-00.json"
+    },
+    {
+      "time": "2026-07-17T16:15",
+      "file": "2026/07/17/2026-07-17T16-15.json"
+    },
+    {
+      "time": "2026-07-17T16:30",
+      "file": "2026/07/17/2026-07-17T16-30.json"
+    },
+    {
+      "time": "2026-07-17T16:45",
+      "file": "2026/07/17/2026-07-17T16-45.json"
+    },
+    {
+      "time": "2026-07-17T17:00",
+      "file": "2026/07/17/2026-07-17T17-00.json"
+    },
+    {
+      "time": "2026-07-17T17:15",
+      "file": "2026/07/17/2026-07-17T17-15.json"
+    },
+    {
+      "time": "2026-07-17T17:30",
+      "file": "2026/07/17/2026-07-17T17-30.json"
+    },
+    {
+      "time": "2026-07-17T17:45",
+      "file": "2026/07/17/2026-07-17T17-45.json"
+    },
+    {
+      "time": "2026-07-17T18:00",
+      "file": "2026/07/17/2026-07-17T18-00.json"
     }
   ]
 }
