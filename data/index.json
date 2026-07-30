@@ -1,63 +1,35 @@
 {
-  "generatedAt": "2026-07-30T22:03:45.293Z",
+  "generatedAt": "2026-07-30T23:54:34.386Z",
   "source": "open-meteo",
   "sourceUrl": "https://api.open-meteo.com/v1/forecast?latitude=53.55262&longitude=-0.16441&timezone=Europe%2FLondon&minutely_15=weather_code%2Ccloud_cover%2Cprecipitation%2Crain%2Csnowfall%2Csnow_depth%2Cwind_speed_10m%2Cwind_gusts_10m%2Cvisibility%2Cis_day&daily=sunrise%2Csunset&past_days=2&forecast_days=1&past_minutely_15=192&forecast_minutely_15=1",
-  "originalResponse": "originals/2026/07/2026-07-30.json",
+  "originalResponse": "originals/2026/07/2026-07-31.json",
   "coordinates": {
     "latitude": 53.55262,
     "longitude": -0.16441
   },
   "timezone": "Europe/London",
   "pointCount": 192,
-  "latestAllowedTime": "2026-07-30T23:00",
+  "latestAllowedTime": "2026-07-31T00:45",
   "sunriseSunsetLeewayMinutes": 60,
   "snowDepthThresholdMeters": 0.02,
   "daily": {
     "time": [
-      "2026-07-28",
       "2026-07-29",
-      "2026-07-30"
+      "2026-07-30",
+      "2026-07-31"
     ],
     "sunrise": [
-      "2026-07-28T05:09",
       "2026-07-29T05:11",
-      "2026-07-30T05:13"
+      "2026-07-30T05:13",
+      "2026-07-31T05:14"
     ],
     "sunset": [
-      "2026-07-28T21:04",
       "2026-07-29T21:02",
-      "2026-07-30T21:01"
+      "2026-07-30T21:01",
+      "2026-07-31T20:59"
     ]
   },
   "points": [
-    {
-      "time": "2026-07-28T23:15",
-      "file": "2026/07/28/2026-07-28T23-15.json"
-    },
-    {
-      "time": "2026-07-28T23:30",
-      "file": "2026/07/28/2026-07-28T23-30.json"
-    },
-    {
-      "time": "2026-07-28T23:45",
-      "file": "2026/07/28/2026-07-28T23-45.json"
-    },
-    {
-      "time": "2026-07-29T00:00",
-      "file": "2026/07/29/2026-07-29T00-00.json"
-    },
-    {
-      "time": "2026-07-29T00:15",
-      "file": "2026/07/29/2026-07-29T00-15.json"
-    },
-    {
-      "time": "2026-07-29T00:30",
-      "file": "2026/07/29/2026-07-29T00-30.json"
-    },
-    {
-      "time": "2026-07-29T00:45",
-      "file": "2026/07/29/2026-07-29T00-45.json"
-    },
     {
       "time": "2026-07-29T01:00",
       "file": "2026/07/29/2026-07-29T01-00.json"
@@ -797,6 +769,34 @@
     {
       "time": "2026-07-30T23:00",
       "file": "2026/07/30/2026-07-30T23-00.json"
+    },
+    {
+      "time": "2026-07-30T23:15",
+      "file": "2026/07/30/2026-07-30T23-15.json"
+    },
+    {
+      "time": "2026-07-30T23:30",
+      "file": "2026/07/30/2026-07-30T23-30.json"
+    },
+    {
+      "time": "2026-07-30T23:45",
+      "file": "2026/07/30/2026-07-30T23-45.json"
+    },
+    {
+      "time": "2026-07-31T00:00",
+      "file": "2026/07/31/2026-07-31T00-00.json"
+    },
+    {
+      "time": "2026-07-31T00:15",
+      "file": "2026/07/31/2026-07-31T00-15.json"
+    },
+    {
+      "time": "2026-07-31T00:30",
+      "file": "2026/07/31/2026-07-31T00-30.json"
+    },
+    {
+      "time": "2026-07-31T00:45",
+      "file": "2026/07/31/2026-07-31T00-45.json"
     }
   ]
 }
