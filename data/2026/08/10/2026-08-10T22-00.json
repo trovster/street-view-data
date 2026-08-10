@@ -2,8 +2,8 @@
   "time": "2026-08-10T22:00",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 3,
-    "cloud_cover": 100,
+    "weather_code": 2,
+    "cloud_cover": 66,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
