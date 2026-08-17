@@ -8,8 +8,8 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 8.3,
-    "wind_gusts_10m": 14.8,
+    "wind_speed_10m": 5.8,
+    "wind_gusts_10m": 10.8,
     "visibility": 6980,
     "is_day": 1
   },
@@ -24,7 +24,7 @@
     "clouds": "many",
     "rain": "none",
     "snow": "none",
-    "wind": "light",
+    "wind": "none",
     "fog": false
   }
 }
