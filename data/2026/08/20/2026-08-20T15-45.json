@@ -8,9 +8,9 @@
     "rain": 0.5,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 18,
-    "wind_gusts_10m": 31.7,
-    "visibility": 10140,
+    "wind_speed_10m": 14.8,
+    "wind_gusts_10m": 26.3,
+    "visibility": 9820,
     "is_day": 1
   },
   "astronomy": {
