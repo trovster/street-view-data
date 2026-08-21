@@ -4,13 +4,13 @@
   "raw": {
     "weather_code": 63,
     "cloud_cover": 100,
-    "precipitation": 1,
-    "rain": 1,
+    "precipitation": 0.9,
+    "rain": 0.9,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 14.8,
-    "wind_gusts_10m": 25.9,
-    "visibility": 7800,
+    "wind_speed_10m": 14.4,
+    "wind_gusts_10m": 25.2,
+    "visibility": 5340,
     "is_day": 1
   },
   "astronomy": {
