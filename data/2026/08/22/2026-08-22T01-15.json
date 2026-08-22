@@ -2,15 +2,15 @@
   "time": "2026-08-22T01:15",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 3,
-    "cloud_cover": 90,
+    "weather_code": 2,
+    "cloud_cover": 78,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 9.7,
-    "wind_gusts_10m": 18.7,
-    "visibility": 27260,
+    "wind_speed_10m": 11.5,
+    "wind_gusts_10m": 22,
+    "visibility": 27480,
     "is_day": 0
   },
   "astronomy": {
