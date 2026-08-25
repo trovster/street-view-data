@@ -1,51 +1,35 @@
 {
-  "generatedAt": "2026-08-25T22:17:05.009Z",
+  "generatedAt": "2026-08-25T23:17:34.172Z",
   "source": "open-meteo",
   "sourceUrl": "https://api.open-meteo.com/v1/forecast?latitude=53.55262&longitude=-0.16441&timezone=Europe%2FLondon&minutely_15=weather_code%2Ccloud_cover%2Cprecipitation%2Crain%2Csnowfall%2Csnow_depth%2Cwind_speed_10m%2Cwind_gusts_10m%2Cvisibility%2Cis_day&daily=sunrise%2Csunset&past_days=2&forecast_days=1&past_minutely_15=192&forecast_minutely_15=1",
-  "originalResponse": "originals/2026/08/2026-08-25.json",
+  "originalResponse": "originals/2026/08/2026-08-26.json",
   "coordinates": {
     "latitude": 53.55262,
     "longitude": -0.16441
   },
   "timezone": "Europe/London",
   "pointCount": 192,
-  "latestAllowedTime": "2026-08-25T23:15",
+  "latestAllowedTime": "2026-08-26T00:15",
   "sunriseSunsetLeewayMinutes": 60,
   "snowDepthThresholdMeters": 0.02,
   "daily": {
     "time": [
-      "2026-08-23",
       "2026-08-24",
-      "2026-08-25"
+      "2026-08-25",
+      "2026-08-26"
     ],
     "sunrise": [
-      "2026-08-23T05:54",
       "2026-08-24T05:56",
-      "2026-08-25T05:57"
+      "2026-08-25T05:57",
+      "2026-08-26T05:59"
     ],
     "sunset": [
-      "2026-08-23T20:12",
       "2026-08-24T20:09",
-      "2026-08-25T20:07"
+      "2026-08-25T20:07",
+      "2026-08-26T20:05"
     ]
   },
   "points": [
-    {
-      "time": "2026-08-23T23:30",
-      "file": "2026/08/23/2026-08-23T23-30.json"
-    },
-    {
-      "time": "2026-08-23T23:45",
-      "file": "2026/08/23/2026-08-23T23-45.json"
-    },
-    {
-      "time": "2026-08-24T00:00",
-      "file": "2026/08/24/2026-08-24T00-00.json"
-    },
-    {
-      "time": "2026-08-24T00:15",
-      "file": "2026/08/24/2026-08-24T00-15.json"
-    },
     {
       "time": "2026-08-24T00:30",
       "file": "2026/08/24/2026-08-24T00-30.json"
@@ -797,6 +781,22 @@
     {
       "time": "2026-08-25T23:15",
       "file": "2026/08/25/2026-08-25T23-15.json"
+    },
+    {
+      "time": "2026-08-25T23:30",
+      "file": "2026/08/25/2026-08-25T23-30.json"
+    },
+    {
+      "time": "2026-08-25T23:45",
+      "file": "2026/08/25/2026-08-25T23-45.json"
+    },
+    {
+      "time": "2026-08-26T00:00",
+      "file": "2026/08/26/2026-08-26T00-00.json"
+    },
+    {
+      "time": "2026-08-26T00:15",
+      "file": "2026/08/26/2026-08-26T00-15.json"
     }
   ]
 }
