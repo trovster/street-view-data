@@ -3,14 +3,14 @@
   "source": "open-meteo",
   "raw": {
     "weather_code": 51,
-    "cloud_cover": 77,
+    "cloud_cover": 72,
     "precipitation": 0.1,
     "rain": 0.1,
     "snowfall": 0,
     "snow_depth": 0,
     "wind_speed_10m": 11.5,
-    "wind_gusts_10m": 20.5,
-    "visibility": 21980,
+    "wind_gusts_10m": 22,
+    "visibility": 27600,
     "is_day": 1
   },
   "astronomy": {
