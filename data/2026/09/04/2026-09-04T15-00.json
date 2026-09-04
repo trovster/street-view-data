@@ -1,5 +1,5 @@
 {
-  "time": "2026-09-04T08:45",
+  "time": "2026-09-04T15:00",
   "source": "open-meteo",
   "raw": {
     "weather_code": 3,
@@ -8,15 +8,15 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 18.7,
-    "wind_gusts_10m": 34.2,
-    "visibility": 16440,
+    "wind_speed_10m": 31.7,
+    "wind_gusts_10m": 57.6,
+    "visibility": 32300,
     "is_day": 1
   },
   "astronomy": {
     "sunrise": "2026-09-04T06:15",
     "sunset": "2026-09-04T19:44",
-    "moonIllumination": 0.5113622716032757
+    "moonIllumination": 0.48366189944369253
   },
   "scene": {
     "baseLayer": "default",
@@ -24,7 +24,7 @@
     "clouds": "many",
     "rain": "none",
     "snow": "none",
-    "wind": "light",
+    "wind": "strong",
     "fog": false
   }
 }
