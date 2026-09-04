@@ -5,12 +5,12 @@
     "weather_code": 51,
     "cloud_cover": 100,
     "precipitation": 0.1,
-    "rain": 0.4,
+    "rain": 0.1,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 16.2,
-    "wind_gusts_10m": 24.8,
-    "visibility": 18500,
+    "wind_speed_10m": 14.4,
+    "wind_gusts_10m": 26.6,
+    "visibility": 17400,
     "is_day": 0
   },
   "astronomy": {
