@@ -15,12 +15,12 @@
   },
   "astronomy": {
     "sunrise": "2026-09-03T06:13",
-    "sunset": "2026-09-03T19:45",
+    "sunset": "2026-09-03T19:46",
     "moonIllumination": 0.5731572192536569
   },
   "scene": {
     "baseLayer": "default",
-    "scene": "sunset",
+    "scene": "day",
     "clouds": "many",
     "rain": "none",
     "snow": "none",
