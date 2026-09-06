@@ -3,18 +3,18 @@
   "source": "open-meteo",
   "raw": {
     "weather_code": 0,
-    "cloud_cover": 14,
+    "cloud_cover": 7,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 5,
-    "wind_gusts_10m": 7.9,
-    "visibility": 29180,
+    "wind_speed_10m": 5.8,
+    "wind_gusts_10m": 8.6,
+    "visibility": 34460,
     "is_day": 0
   },
   "astronomy": {
-    "sunrise": "2026-09-05T06:17",
+    "sunrise": "2026-09-05T06:16",
     "sunset": "2026-09-05T19:41",
     "moonIllumination": 0.35288827285899405
   },
