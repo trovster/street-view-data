@@ -1,0 +1,30 @@
+{
+  "time": "2026-09-07T05:30",
+  "source": "open-meteo",
+  "raw": {
+    "weather_code": 2,
+    "cloud_cover": 53,
+    "precipitation": 0,
+    "rain": 0,
+    "snowfall": 0,
+    "snow_depth": 0,
+    "wind_speed_10m": 10.8,
+    "wind_gusts_10m": 19.8,
+    "visibility": 27760,
+    "is_day": 0
+  },
+  "astronomy": {
+    "sunrise": "2026-09-07T06:20",
+    "sunset": "2026-09-07T19:36",
+    "moonIllumination": 0.2231640714654366
+  },
+  "scene": {
+    "baseLayer": "default",
+    "scene": "sunrise",
+    "clouds": "few",
+    "rain": "none",
+    "snow": "none",
+    "wind": "light",
+    "fog": false
+  }
+}
