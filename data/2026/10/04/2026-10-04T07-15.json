@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-03T21:15",
+  "time": "2026-10-04T07:15",
   "source": "open-meteo",
   "raw": {
     "weather_code": 0,
@@ -8,19 +8,19 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 7.9,
-    "wind_gusts_10m": 11.9,
-    "visibility": 23100,
-    "is_day": 0
+    "wind_speed_10m": 4.3,
+    "wind_gusts_10m": 8.6,
+    "visibility": 18220,
+    "is_day": 1
   },
   "astronomy": {
-    "sunrise": "2026-10-03T07:05",
-    "sunset": "2026-10-03T18:32",
-    "moonIllumination": 0.5123998130448226
+    "sunrise": "2026-10-04T07:07",
+    "sunset": "2026-10-04T18:30",
+    "moonIllumination": 0.46809595891809913
   },
   "scene": {
     "baseLayer": "default",
-    "scene": "night-full",
+    "scene": "sunrise",
     "clouds": "none",
     "rain": "none",
     "snow": "none",
