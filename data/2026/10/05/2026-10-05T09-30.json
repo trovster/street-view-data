@@ -2,15 +2,15 @@
   "time": "2026-10-05T09:30",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 2,
-    "cloud_cover": 62,
+    "weather_code": 0,
+    "cloud_cover": 8,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 24.1,
-    "wind_gusts_10m": 43.2,
-    "visibility": 25620,
+    "wind_speed_10m": 25.2,
+    "wind_gusts_10m": 45,
+    "visibility": 34060,
     "is_day": 1
   },
   "astronomy": {
@@ -21,7 +21,7 @@
   "scene": {
     "baseLayer": "default",
     "scene": "day",
-    "clouds": "few",
+    "clouds": "none",
     "rain": "none",
     "snow": "none",
     "wind": "light",
