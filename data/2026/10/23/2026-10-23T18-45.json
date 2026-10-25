@@ -8,19 +8,19 @@
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 29.9,
-    "wind_gusts_10m": 54.7,
-    "visibility": 20560,
+    "wind_speed_10m": 30.6,
+    "wind_gusts_10m": 56.5,
+    "visibility": 31740,
     "is_day": 0
   },
   "astronomy": {
-    "sunrise": "2026-10-23T07:42",
-    "sunset": "2026-10-23T17:46",
+    "sunrise": "2026-10-23T06:42",
+    "sunset": "2026-10-23T16:46",
     "moonIllumination": 0.937833667099877
   },
   "scene": {
     "baseLayer": "default",
-    "scene": "sunset",
+    "scene": "night-full",
     "clouds": "many",
     "rain": "none",
     "snow": "none",

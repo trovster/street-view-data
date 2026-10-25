@@ -8,14 +8,14 @@
     "rain": 0.3,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 26.6,
-    "wind_gusts_10m": 48.2,
-    "visibility": 6760,
+    "wind_speed_10m": 29.9,
+    "wind_gusts_10m": 55.1,
+    "visibility": 5180,
     "is_day": 1
   },
   "astronomy": {
-    "sunrise": "2026-10-24T07:44",
-    "sunset": "2026-10-24T17:44",
+    "sunrise": "2026-10-24T06:44",
+    "sunset": "2026-10-24T16:44",
     "moonIllumination": 0.9724803088435869
   },
   "scene": {

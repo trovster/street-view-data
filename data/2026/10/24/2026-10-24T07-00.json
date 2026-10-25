@@ -3,19 +3,19 @@
   "source": "open-meteo",
   "raw": {
     "weather_code": 3,
-    "cloud_cover": 91,
+    "cloud_cover": 98,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 14,
-    "wind_gusts_10m": 25.6,
-    "visibility": 29520,
-    "is_day": 0
+    "wind_speed_10m": 18,
+    "wind_gusts_10m": 32.8,
+    "visibility": 24920,
+    "is_day": 1
   },
   "astronomy": {
-    "sunrise": "2026-10-24T07:44",
-    "sunset": "2026-10-24T17:44",
+    "sunrise": "2026-10-24T06:44",
+    "sunset": "2026-10-24T16:44",
     "moonIllumination": 0.9614252021471882
   },
   "scene": {

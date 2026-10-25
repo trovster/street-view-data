@@ -4,23 +4,23 @@
   "raw": {
     "weather_code": 61,
     "cloud_cover": 100,
-    "precipitation": 0.5,
-    "rain": 0.5,
+    "precipitation": 0.4,
+    "rain": 0.4,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 38.2,
-    "wind_gusts_10m": 69.5,
-    "visibility": 3220,
+    "wind_speed_10m": 35.6,
+    "wind_gusts_10m": 65.2,
+    "visibility": 3180,
     "is_day": 0
   },
   "astronomy": {
-    "sunrise": "2026-10-24T07:44",
-    "sunset": "2026-10-24T17:44",
+    "sunrise": "2026-10-24T06:44",
+    "sunset": "2026-10-24T16:44",
     "moonIllumination": 0.977656865412486
   },
   "scene": {
     "baseLayer": "default",
-    "scene": "sunset",
+    "scene": "night-full",
     "clouds": "many",
     "rain": "light",
     "snow": "none",
