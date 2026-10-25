@@ -1,0 +1,30 @@
+{
+  "time": "2026-10-25T15:15",
+  "source": "open-meteo",
+  "raw": {
+    "weather_code": 51,
+    "cloud_cover": 65,
+    "precipitation": 0.1,
+    "rain": 0.1,
+    "snowfall": 0,
+    "snow_depth": 0,
+    "wind_speed_10m": 36.7,
+    "wind_gusts_10m": 66.6,
+    "visibility": 22060,
+    "is_day": 1
+  },
+  "astronomy": {
+    "sunrise": "2026-10-25T06:46",
+    "sunset": "2026-10-25T16:42",
+    "moonIllumination": 0.9970069776522237
+  },
+  "scene": {
+    "baseLayer": "default",
+    "scene": "day",
+    "clouds": "few",
+    "rain": "light",
+    "snow": "none",
+    "wind": "strong",
+    "fog": false
+  }
+}
