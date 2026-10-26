@@ -2,14 +2,14 @@
   "time": "2026-10-25T22:00",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 2,
-    "cloud_cover": 62,
+    "weather_code": 3,
+    "cloud_cover": 87,
     "precipitation": 0,
     "rain": 0,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 23.4,
-    "wind_gusts_10m": 42.8,
+    "wind_speed_10m": 26.3,
+    "wind_gusts_10m": 47.9,
     "visibility": 19460,
     "is_day": 0
   },
@@ -21,10 +21,10 @@
   "scene": {
     "baseLayer": "default",
     "scene": "night-full",
-    "clouds": "few",
+    "clouds": "many",
     "rain": "none",
     "snow": "none",
-    "wind": "light",
+    "wind": "strong",
     "fog": false
   }
 }
