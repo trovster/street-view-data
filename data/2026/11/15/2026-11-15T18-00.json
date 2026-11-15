@@ -2,15 +2,15 @@
   "time": "2026-11-15T18:00",
   "source": "open-meteo",
   "raw": {
-    "weather_code": 53,
+    "weather_code": 51,
     "cloud_cover": 100,
-    "precipitation": 0.2,
-    "rain": 0.2,
+    "precipitation": 0.1,
+    "rain": 0.1,
     "snowfall": 0,
     "snow_depth": 0,
-    "wind_speed_10m": 6.1,
-    "wind_gusts_10m": 11.5,
-    "visibility": 3560,
+    "wind_speed_10m": 6.8,
+    "wind_gusts_10m": 13,
+    "visibility": 3080,
     "is_day": 0
   },
   "astronomy": {
@@ -24,7 +24,7 @@
     "clouds": "many",
     "rain": "light",
     "snow": "none",
-    "wind": "none",
+    "wind": "light",
     "fog": false
   }
 }
