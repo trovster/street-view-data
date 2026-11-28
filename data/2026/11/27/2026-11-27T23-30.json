@@ -1,0 +1,30 @@
+{
+  "time": "2026-11-27T23:30",
+  "source": "open-meteo",
+  "raw": {
+    "weather_code": 3,
+    "cloud_cover": 100,
+    "precipitation": 0,
+    "rain": 0,
+    "snowfall": 0,
+    "snow_depth": 0,
+    "wind_speed_10m": 15.8,
+    "wind_gusts_10m": 28.8,
+    "visibility": 10580,
+    "is_day": 0
+  },
+  "astronomy": {
+    "sunrise": "2026-11-27T07:47",
+    "sunset": "2026-11-27T15:48",
+    "moonIllumination": 0.8818246410534549
+  },
+  "scene": {
+    "baseLayer": "default",
+    "scene": "night-full",
+    "clouds": "many",
+    "rain": "none",
+    "snow": "none",
+    "wind": "light",
+    "fog": false
+  }
+}
